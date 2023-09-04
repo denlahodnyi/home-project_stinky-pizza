@@ -5,5 +5,19 @@
 @layer base {
   html {
     line-height: 1.8;
+    font-family: theme(fontFamily.text);
+    color: theme(colors.text.DEFAULT);
+  }
+  body {
+    background-color: theme(colors.background.DEFAULT);
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    html {
+      color: theme(colors.textDark.DEFAULT)
+    }
+    body {
+      background-color: theme(colors.backgroundDark.DEFAULT);
+    }
   }
 }
