@@ -21,3 +21,45 @@
     }
   }
 }
+
+@layer components {
+  .button {
+    @apply px-3 py-1 shadow-md
+    data-[size=large]:px-5
+    data-[size=large]:py-3
+    data-[size=large]:text-xl
+
+    data-[variant=primary]:bg-primary
+    data-[variant=primary]:rounded-md
+    data-[variant=primary]:hover:bg-primary-hover
+    data-[variant=primary]:active:bg-primary-active
+    data-[variant=primary]:disabled:opacity-40
+    data-[variant=primary]:disabled:hover:bg-primary
+    data-[variant=primary]:disabled:active:bg-primary
+    data-[variant=primary]:shadow-primary-light
+
+    data-[variant=secondary]:bg-secondary
+    data-[variant=secondary]:rounded-md
+    data-[variant=secondary]:hover:bg-secondary-hover
+    data-[variant=secondary]:active:bg-secondary-active
+    data-[variant=secondary]:disabled:opacity-40
+    data-[variant=secondary]:disabled:hover:bg-secondary
+    data-[variant=secondary]:disabled:active:bg-secondary
+    data-[variant=secondary]:shadow-secondary-light
+  }
+  /* .button[size="large"] {
+    @apply px-5 py-4
+  } */
+  /* .button-primary {
+    @apply rounded-md bg-primary  hover:bg-primary-hover active:bg-primary-active shadow-md shadow-primary-light
+  }
+  .button-primary:disabled {
+    @apply opacity-40 hover:bg-primary active:bg-primary
+  }
+  .button-secondary {
+    @apply rounded-md bg-secondary hover:bg-secondary-hover active:bg-secondary-active
+  }
+  .button-secondary:disabled {
+    @apply opacity-40 hover:bg-secondary active:bg-secondary
+  } */
+}
