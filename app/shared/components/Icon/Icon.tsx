@@ -3,9 +3,9 @@ import type { IconBaseProps } from 'react-icons';
 
 type IconNames = keyof typeof liaIcons;
 
-type IconProps = {
+export type IconProps = {
   iconName: IconNames;
-  className: string;
+  className?: string;
 } & IconBaseProps;
 
 export default function Icon({ iconName, ...rest }: IconProps) {

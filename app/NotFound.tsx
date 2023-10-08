@@ -39,7 +39,7 @@ export default function NotFound() {
         <h1 className="text-5xl">Error</h1>
         <p>{error.message}</p>
         <p>The stack trace is:</p>
-        <pre>{error.stack}</pre>
+        <pre className="[text-wrap: wrap]">{error.stack}</pre>
         <HomeLink />
       </div>
     );

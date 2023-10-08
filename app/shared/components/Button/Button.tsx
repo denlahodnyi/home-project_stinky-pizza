@@ -4,22 +4,19 @@ import BaseButton, {
   type BaseButtonRef,
   type BaseButtonWithForwardRef,
 } from '../BaseButton/BaseButton';
-import clsx from 'clsx';
+import { cn } from '~/shared/utils';
 
 type ButtonOwnProps = {
-  variant?: 'primary' | 'secondary';
+  variant?: '' | 'primary' | 'secondary';
   size?: 'default' | 'large';
+  leftElement?: JSX.Element;
+  rightElement?: JSX.Element;
 };
 
 export type ButtonProps<
   A extends React.ElementType,
   B extends boolean,
 > = BaseButtonProps<A, B> & ButtonOwnProps;
-
-// const styledVariants = {
-//   primary: 'button button-primary',
-//   secondary: 'button button-secondary',
-// };
 
 function Button<A extends React.ElementType, B extends boolean>(
   props: ButtonProps<A, B>,
@@ -30,6 +27,8 @@ function Button<A extends React.ElementType, B extends boolean>(
     className,
     variant = 'primary',
     size = 'default',
+    leftElement,
+    rightElement,
     ...rest
   } = props;
 
@@ -38,10 +37,14 @@ function Button<A extends React.ElementType, B extends boolean>(
       {...rest}
       data-size={size}
       data-variant={variant}
-      className={clsx('button', className)}
+      className={cn('button', className)}
       ref={ref}
     >
-      {children}
+      <span className="button-inner inline-flex space-x-0.5">
+        {leftElement && <span>{leftElement}</span>}
+        <span>{children}</span>
+        {rightElement && <span>{rightElement}</span>}
+      </span>
     </BaseButton>
   );
 }

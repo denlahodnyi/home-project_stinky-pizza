@@ -9,14 +9,11 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 
-import NotFound from './NotFound';
-// import '@fontsource/comic-neue/300.css';
-// import '@fontsource/comic-neue/400.css';
-// import '@fontsource/comic-neue/700.css';
-// Supports weights 100-900
 import '@fontsource-variable/grandstander/index.css';
 import '@fontsource/gloria-hallelujah/400.css';
 import styles from './tailwind.css';
+
+import NotFound from './NotFound';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --outline-width: 2px;
+    --outline-color: theme(colors.blue.600);
+    --outline-style: auto;
+  }
   html {
     line-height: 1.8;
     font-family: theme(fontFamily.text);
@@ -10,6 +15,14 @@
   }
   body {
     background-color: theme(colors.background.DEFAULT);
+  }
+  svg {
+    @apply inline-block
+  }
+  :focus-visible {
+    outline-width: var(--outline-width);
+    outline-color: var(--outline-color);
+    outline-style: var(--outline-style);
   }
 
   @media screen and (prefers-color-scheme: dark) {
@@ -23,8 +36,13 @@
 }
 
 @layer components {
+  .app-outline {
+    outline-width: var(--outline-width);
+    outline-color: var(--outline-color);
+    outline-style: var(--outline-style);
+  }
   .button {
-    @apply px-3 py-1 shadow-md
+    @apply px-3 py-1 shadow-md text-white
     data-[size=large]:px-5
     data-[size=large]:py-3
     data-[size=large]:text-xl
@@ -47,19 +65,30 @@
     data-[variant=secondary]:disabled:active:bg-secondary
     data-[variant=secondary]:shadow-secondary-light
   }
-  /* .button[size="large"] {
-    @apply px-5 py-4
-  } */
-  /* .button-primary {
-    @apply rounded-md bg-primary  hover:bg-primary-hover active:bg-primary-active shadow-md shadow-primary-light
+  .iconButton {
+    @apply px-1 py-1 rounded-full inline-flex hover:bg-slate-300/20
+    data-[size=large]:px-3
+    data-[size=large]:py-3
+    data-[size=large]:text-xl
+
+    data-[variant=primary]:bg-primary
+    data-[variant=primary]:text-white
+    data-[variant=primary]:shadow-md
+    data-[variant=primary]:hover:bg-primary-hover
+    data-[variant=primary]:active:bg-primary-active
+    data-[variant=primary]:disabled:opacity-40
+    data-[variant=primary]:disabled:hover:bg-primary
+    data-[variant=primary]:disabled:active:bg-primary
+    data-[variant=primary]:shadow-primary-light
+
+    data-[variant=secondary]:bg-secondary
+    data-[variant=secondary]:text-white
+    data-[variant=secondary]:shadow-md
+    data-[variant=secondary]:hover:bg-secondary-hover
+    data-[variant=secondary]:active:bg-secondary-active
+    data-[variant=secondary]:disabled:opacity-40
+    data-[variant=secondary]:disabled:hover:bg-secondary
+    data-[variant=secondary]:disabled:active:bg-secondary
+    data-[variant=secondary]:shadow-secondary-light
   }
-  .button-primary:disabled {
-    @apply opacity-40 hover:bg-primary active:bg-primary
-  }
-  .button-secondary {
-    @apply rounded-md bg-secondary hover:bg-secondary-hover active:bg-secondary-active
-  }
-  .button-secondary:disabled {
-    @apply opacity-40 hover:bg-secondary active:bg-secondary
-  } */
 }

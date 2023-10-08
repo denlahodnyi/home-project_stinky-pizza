@@ -5,6 +5,7 @@ describe('formatPrice', () => {
   test('returns correct result if price = 15000 and discount = 50', () => {
     const priceData: Price = {
       amount: 150_00,
+      amountWithDiscount: 100_00,
       discount: 5000,
       discountUnit: 'currency',
       currency: 'USD',
@@ -21,6 +22,7 @@ describe('formatPrice', () => {
   test('returns correct result if price = 15000 and discount = 50%', () => {
     const priceData: Price = {
       amount: 150_00,
+      amountWithDiscount: 75_00,
       discount: 50,
       discountUnit: 'percentage',
       currency: 'USD',

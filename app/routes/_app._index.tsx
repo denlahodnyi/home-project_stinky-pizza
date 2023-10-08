@@ -1,4 +1,4 @@
-import { V2_MetaFunction, json } from '@remix-run/node';
+import { type V2_MetaFunction, json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { ProductCard } from '~/widgets';
 import { fakeDrinks, fakePizzas } from '~/mocks/data/products';

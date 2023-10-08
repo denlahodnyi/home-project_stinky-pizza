@@ -2,17 +2,17 @@ import type { Price } from '../types';
 
 const formatPrice = (price: Price) => {
   const calculatedPrice = price.amount / 100;
+  const calculatedPriceWithDiscount = price.amountWithDiscount / 100;
   let calculatedDiscount: number;
-  let priceWithDiscount: number;
   let formattedDiscount: string;
 
   if (price.discountUnit === 'percentage') {
+    // minor unit for discount is 1
     calculatedDiscount = price.discount;
-    priceWithDiscount = (price.amount * price.discount) / 100 / 100;
     formattedDiscount = `-${calculatedDiscount}%`;
   } else {
+    // minor unit for discount is same as for price
     calculatedDiscount = price.discount / 100;
-    priceWithDiscount = (price.amount - price.discount) / 100;
     formattedDiscount = `-${new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: price.currency,
@@ -21,7 +21,7 @@ const formatPrice = (price: Price) => {
 
   return {
     price: calculatedPrice,
-    priceWithDiscount,
+    priceWithDiscount: calculatedPriceWithDiscount,
     priceWithCurrency: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: price.currency,
@@ -29,7 +29,7 @@ const formatPrice = (price: Price) => {
     priceWithDiscountAndCurrency: new Intl.NumberFormat('en-US', {
       style: 'currency',
       currency: price.currency,
-    }).format(priceWithDiscount),
+    }).format(calculatedPriceWithDiscount),
     discount: calculatedDiscount,
     formattedDiscount,
   };
