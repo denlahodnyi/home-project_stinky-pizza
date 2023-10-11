@@ -27,7 +27,7 @@ export default {
           DEFAULT: '#ece8ff',
         },
         surfaceDark: {
-          DEFAULT: '#310ba4',
+          DEFAULT: '#1b0651',
         },
         primary: {
           light: '#fecdd5',

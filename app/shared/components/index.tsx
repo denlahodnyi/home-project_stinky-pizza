@@ -6,3 +6,4 @@ export { default as BaseInput } from './BaseInput/BaseInput';
 export { default as StepperInput } from './StepperInput/StepperInput';
 export { default as Modal } from './Modal/Modal';
 export { default as Header } from './layout/Header';
+export { default as ProductsList } from './layout/ProductsList';

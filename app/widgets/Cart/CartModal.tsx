@@ -56,7 +56,7 @@ export default function CartModal(props: CartModalProps) {
       isOpen={isOpen}
       onClose={onClose}
       position="default"
-      className="absolute bottom-0 right-0 top-0 flex w-full max-w-[50%] flex-col rounded-none"
+      className="absolute bottom-0 right-0 top-0 flex h-[100dvh] w-full flex-col rounded-none md:max-w-[70%] lg:max-w-[50%]"
     >
       <div className="grid grid-cols-[1fr_auto_minmax(20px,1fr)] px-2 py-4">
         <span className="flex">
@@ -99,7 +99,9 @@ export default function CartModal(props: CartModalProps) {
         </div>
       ) : (
         <div className="flex flex-1 items-center justify-center">
-          <p className="text-text/50">Your cart is empty</p>
+          <p className="text-xl text-text/50 dark:text-textDark/50">
+            Your cart is empty
+          </p>
         </div>
       )}
       <div className="flex items-center justify-between border-t px-4 py-2">

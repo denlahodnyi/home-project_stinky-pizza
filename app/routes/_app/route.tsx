@@ -5,7 +5,7 @@ import ModalsContainer from './ModalsContainer';
 
 export default function AppLayout() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="container mx-auto flex min-h-screen flex-col">
       <Header />
       <Outlet />
       <Footer />

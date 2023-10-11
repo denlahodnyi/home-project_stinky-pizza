@@ -27,6 +27,8 @@ const FOCUSABLE_ELEMENTS =
   'details,' +
   '[tabindex]:not([disabled]):not([tabindex="-1"])';
 
+const TIMEOUT = 200;
+
 export default function Modal(props: ModalProps) {
   const {
     isOpen,
@@ -130,7 +132,7 @@ export default function Modal(props: ModalProps) {
       focusGuardsRef.current?.[0].removeEventListener('focus', onGuardFocus);
       focusGuardsRef.current?.[1]?.removeEventListener('focus', onGuardFocus);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const modal = (
     <ModalOverlay {...overlayProps} ref={rootMultiRefsCallback}>
@@ -139,7 +141,7 @@ export default function Modal(props: ModalProps) {
         nodeRef={modalRef}
         in={isOpen}
         appear
-        timeout={300}
+        timeout={TIMEOUT}
         mountOnEnter
       >
         {(state) => (
@@ -148,7 +150,7 @@ export default function Modal(props: ModalProps) {
             ref={modalMultiRefsCallback}
             style={{
               opacity: state === 'entered' || state === 'entering' ? 1 : 0,
-              transition: `opacity 300ms ease-in-out`,
+              transition: `opacity ${TIMEOUT}ms ease-in-out`,
             }}
           >
             {children}

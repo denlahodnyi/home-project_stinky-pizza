@@ -31,7 +31,7 @@ function ModalContainer(
       aria-modal="true"
       tabIndex={-1}
       className={clsx(
-        'rounded-md bg-background',
+        'rounded-md bg-background dark:bg-backgroundDark',
         positionVariants[position],
         className
       )}

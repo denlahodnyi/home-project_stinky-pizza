@@ -42,8 +42,8 @@ export default function SelectedProduct(props: SelectedProductProps) {
           <img
             src={imageUrl || placeholderImg}
             alt=""
-            width={150}
-            className="rounded-md object-cover"
+            // width={150}
+            className="w-[75px] rounded-md object-cover md:w-[150px]"
           />
         </div>
         <div className="flex-1 px-2">

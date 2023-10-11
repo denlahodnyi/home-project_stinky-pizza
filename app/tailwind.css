@@ -55,6 +55,7 @@
     data-[variant=primary]:disabled:hover:bg-primary
     data-[variant=primary]:disabled:active:bg-primary
     data-[variant=primary]:shadow-primary-light
+    data-[variant=primary]:dark:shadow-none
 
     data-[variant=secondary]:bg-secondary
     data-[variant=secondary]:rounded-md
@@ -80,6 +81,7 @@
     data-[variant=primary]:disabled:hover:bg-primary
     data-[variant=primary]:disabled:active:bg-primary
     data-[variant=primary]:shadow-primary-light
+    data-[variant=primary]:dark:shadow-none
 
     data-[variant=secondary]:bg-secondary
     data-[variant=secondary]:text-white

@@ -30,7 +30,7 @@ const styledVariants = {
   default: {
     container: '',
     inputWrapper:
-      'group-[.error]:border-error flex items-center rounded-lg border-2 border-accent bg-background',
+      'group-[.error]:border-error flex items-center rounded-lg border-2 border-accent bg-background dark:bg-backgroundDark',
     input: 'w-full rounded-[inherit] bg-inherit px-1 py-1',
     label: 'group-[.error]:text-error font-bold',
     error: 'text-error',
